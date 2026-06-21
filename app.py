@@ -2,11 +2,16 @@ from flask import Flask, render_template, request, redirect, session
 
 import mysql.connector
 
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
+
 conn = mysql.connector.connect(
-    host="localhost",
-    user="root",
-    password="922007",
-    database="air_reservation"
+    host=os.getenv("DB_HOST"),
+    user=os.getenv("DB_USER"),
+    password=os.getenv("DB_PASSWORD"),
+    database=os.getenv("DB_NAME")
 )
 
 cursor = conn.cursor()

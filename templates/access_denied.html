@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Access Denied</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+
+        body{
+            height:100vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            background:#111827;
+            overflow:hidden;
+        }
+
+        .box{
+
+            text-align:center;
+
+            color:white;
+
+            animation:zoom 0.6s ease;
+
+        }
+
+        .lock{
+
+            font-size:120px;
+
+            animation:shake 0.8s;
+        }
+
+        @keyframes zoom{
+
+            from{
+                transform:scale(0.5);
+                opacity:0;
+            }
+
+            to{
+                transform:scale(1);
+                opacity:1;
+            }
+
+        }
+
+        @keyframes shake{
+
+            0%{transform:translateX(0);}
+            25%{transform:translateX(-15px);}
+            50%{transform:translateX(15px);}
+            75%{transform:translateX(-15px);}
+            100%{transform:translateX(0);}
+        }
+
+        h1{
+            margin-top:20px;
+            font-size:50px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="box">
+
+    <div class="lock">
+        🔒
+    </div>
+
+    <h1>Access Denied</h1>
+
+    <p>
+        You don't have permission to view this page.
+    </p>
+
+    <a href="/bookings"
+       class="btn btn-danger">
+
+       Go Back
+
+    </a>
+
+</div>
+
+</body>
+</html>

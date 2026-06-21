@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Flight Ticket</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+
+        body{
+             background:#eef3f8;
+             font-family:Segoe UI, sans-serif;
+            }
+
+        .ticket{
+             max-width:600px;
+             margin:40px auto;
+             background:white;
+             border-radius:25px;
+             overflow:hidden;
+             box-shadow:0 10px 30px rgba(0,0,0,0.15);
+            }
+
+        .ticket-header{
+             background:
+             linear-gradient(
+                 rgba(0,82,212,0.7),
+                 rgba(67,100,247,0.7)
+                ),
+                url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05?q=80&w=2074');
+
+                background-size:cover;
+                background-position:center;
+
+                color:white;
+                padding:40px;
+                min-height:180px;
+            }
+
+        .ticket-header h1{
+             font-size:3rem;
+             font-weight:bold;
+             color:white;
+             margin:0;
+            }
+
+        .ticket-header p{
+             font-size:1.2rem;
+             color:white;
+             margin-top:10px;
+            }
+
+        .ticket-body{
+             padding:40px;
+            }   
+
+        .info-row{
+             padding:20px 0;
+             border-bottom:1px solid #e5e5e5;
+             font-size:1.8rem;
+        }
+
+        .label{
+             font-weight:bold;
+             color:#0b2c6a;
+            }
+
+        .ticket-id{
+             color:#7c3aed;
+             font-weight:bold;
+            }
+
+        .button-area{
+             margin-top:40px;
+            }
+
+        .print-btn{
+             background:#0052d4;
+             color:white;
+             padding:15px 35px;
+             border:none;
+             border-radius:12px;
+             text-decoration:none;
+            }
+
+        .back-btn{
+              background:#f3f4f6;
+             color:#111827;
+             padding:15px 35px;
+             border-radius:12px;
+             text-decoration:none;
+             margin-left:15px;
+            }
+
+    </style>
+
+</head>
+<body>
+
+<div class="ticket">
+
+    <div class="ticket-header">
+
+        <h1>✈ SkyFly Airlines</h1>
+
+        <p>E-Ticket</p>
+
+        <small>
+         Fly Beyond Limits
+        </small>
+
+    </div>
+
+    <div class="ticket-body">
+
+        <div class="info-row">
+            <span class="label">👤 Passenger:</span>
+            {{ passenger[1] }}
+        </div>
+
+        <div class="info-row">
+            <span class="label">📍 Source:</span>
+            {{ passenger[3] }}
+        </div>
+
+        <div class="info-row">
+            <span class="label">📍 Destination:</span>
+            {{ passenger[4] }}
+        </div>
+
+        <div class="info-row">
+            <span class="label">📅 Journey Date:</span>
+            {{ passenger[5] }}
+        </div>
+
+        <div class="info-row">
+            <span class="label">🎟 Ticket ID:</span>
+
+            <span class="ticket-id">
+                SKY{{ passenger[0] }}
+            </span>
+        </div>
+
+        <div class="button-area">
+
+            <button
+                onclick="window.print()"
+                class="print-btn">
+
+                🖨 Print Ticket
+
+            </button>
+
+            <a href="/bookings"
+               class="back-btn">
+
+               ← Back
+
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

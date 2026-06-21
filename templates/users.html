@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Users</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="container mt-5">
+
+<h2>Registered Users</h2>
+
+<table class="table table-striped">
+
+<tr>
+    <th>ID</th>
+    <th>Username</th>
+    <th>Password</th>
+    <th>Action</th>
+</tr>
+
+{% for user in users %}
+
+<tr>
+    <td>{{ user[0] }}</td>
+    <td>{{ user[1] }}</td>
+    <td>{{ user[2] }}</td>
+
+    <td>
+
+        <a href="/delete-user/{{ user[0] }}"
+           class="btn btn-danger btn-sm"
+           onclick="return confirm('Delete this user?')">
+            Delete
+        </a>
+
+    </td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+</div>
+
+</body>
+</html>
